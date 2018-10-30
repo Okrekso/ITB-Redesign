@@ -1,0 +1,16 @@
+@keyframes boop {
+  $animWidth: 50vw;
+  $animHeight: 50vw;
+  0% {
+    height: 0;
+    flex: 0;
+  }
+  30% {
+    flex: 0 0 $animWidth + 10;
+    height: $animHeight + 10;
+  }
+  100% {
+    flex: 0 0 $animWidth;
+    height: $animHeight;
+  }
+}

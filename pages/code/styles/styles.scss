@@ -1,0 +1,211 @@
+@import "../../../global_styles/global";
+@import "../../../global_styles/header";
+
+::-webkit-scrollbar {
+  display: none;
+}
+body {
+  $blockSeparation: 30pt;
+  & {
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background: rgb(255, 255, 255);
+    color: black;
+  }
+
+  .topHead {
+    font-size: 16pt;
+  }
+  .parallax-slider {
+    filter: blur(2px);
+    width: 100%;
+    height: 100%;
+  }
+  .block {
+    & {
+      // color: rgb(255, 255, 255);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      flex: 0;
+      flex-wrap: wrap;
+      width: 100%;
+      overflow: hidden;
+    }
+    .content {
+      h2 {
+        margin: 0;
+      }
+      p {
+        margin: 0;
+      }
+    }
+
+    @media screen and (orientation: portrait) {
+      justify-content: center;
+      * {
+        text-align: center;
+      }
+      h2 {
+        font-size: 16pt;
+      }
+    }
+
+    &.top {
+      & {
+        $imgUrl: "https://lh3.googleusercontent.com/yASQPI0o6fSPLhV-Tor4eIKUhy5llexCrEXh85YzcGOfiDLs4VMv83WfPJZGQkeyZbrtuuuSWvkJF01JOuro-eiFFT5HsiUg9lfFOjTWZ5mfd5tCzB-6Ub2l-sLa7rqn-S0qBj0vOyzyjNy5UWEmF6pjxxHIqklrPQMPcTqmQa5rbIEdD9JjbfcSnrNkLt9G0pWzZg4rj4bjyHqY60a1-m9TMtSQkrifoDwiQ8OR3E_cDWS_Rrs_1BHFjHuSW3jvHVuA2TMGoaN0a3VgzRjGNslgk2jzIE38XG9aFrei8sU6OTHLuYlGr92sk_llpAnF7Zk0naaNhv2P-aeOzDt9jS_rplx5NNM7IUt-NTXF7mKwyhX1F2ALIkGheEQDuB3p0jFLNSGmIEIGQevy-k9BL26tqV9HCAZYj_CYfzrDh5F8bNfW4uxaJYMo56PfL0uyIpEJchJWT0682xQQhYBuGyIj3azO7aTDMTQkL-1S8ZSeotIL7M6FuK-TykoYAeDlWvWRFyo65Yax7pDhvb_5oZ_SBBg8tvGJJEE7LNwJV3LEeCFelYQ-zJ_H-L5bxAfKCLvuDKS6-e9B_bMr1y-w7Lp7zEYQsxI7fW_AdXtnsiGiiZgQIGM3fW4NRecC7CT3vH2wJMkeOlKEafg-7ddsrOlxAg=w1681-h948-no";
+
+        // background: rgba(29, 119, 204, 0.9);
+        color: white;
+        flex: 1 1 100vh - $headerHeight;
+        min-height: min-content;
+        background-repeat: no-repeat;
+        background-size: cover;
+        background-attachment: fixed;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-top: 5vh;
+        width: 100vw;
+        text-align: center;
+
+        @media screen and (orientation: portrait) {
+          & {
+            background: linear-gradient(
+                rgba(29, 119, 204, 0.9),
+                rgba(29, 119, 204, 0.9)
+              ),
+              url($imgUrl);
+            background-position-x: 30%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+          }
+        }
+      }
+      
+      h2 {
+        font-size: 30pt;
+        text-align: center;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        background: rgba(0, 0, 0, 0.75);
+        margin-top: 5pt;
+        @media screen and (orientation: portrait) {
+          font-size: 20pt;
+        }
+      }
+      p {
+        width: 50vw;
+        margin-bottom: 2vh;
+        @media screen and (orientation: portrait) {
+          width: 80vw;
+        }
+      }
+    }
+
+    &.with_pic {
+      & {
+        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        margin-top: $blockSeparation;
+      }
+      @media screen and (orientation: portrait) {
+        .img {
+          display: none;
+        }
+      }
+      // sides
+      &.left {
+        .content {
+          text-align: left;
+        }
+        .img {
+          order: 0;
+        }
+      }
+      &.right {
+        .content {
+          text-align: right;
+        }
+        .img {
+          order: 2;
+        }
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        h2 {
+        }
+        p {
+          // flex:1;
+          width: 30vw;
+          @media screen and (orientation: portrait) {
+            width: 90vw;
+          }
+        }
+        @media screen and (orientation: portrait) {
+          align-items: center;
+        }
+      }
+      .img {
+        & {
+          border-radius: 100%;
+          width: 20vh;
+          height: 20vh;
+          margin-left: 14pt;
+          margin-right: 14pt;
+        }
+      }
+      //specials
+      &.the_oldest {
+        .img {
+          $imgUrl: "https://scontent-mrs1-1.xx.fbcdn.net/v/t31.0-8/22467626_1805318979766635_7401584886713852345_o.jpg?_nc_cat=111&_nc_ht=scontent-mrs1-1.xx&oh=f1c80a2448d5ebc289b9330e5cb4b532&oe=5C4DE7C9";
+          & {
+            background: url($imgUrl);
+            background-size: cover;
+            background-position: 60% 0;
+          }
+        }
+      }
+      &.founder {
+        .img {
+          $imgUrl: "https://lh3.googleusercontent.com/1hDmtqTqiToobnXDEipmMrtK0-KU5bFawYn_GDwOQLAeRJg8HRf-oGgiSGl4F77EDh1LGkYEQIi9JlJnWCQNAlNqRScOqp79OSfyyDYfQNj0idaXWj7mvJfARqX2MEObZTpAi7VpxPbaro0yHWVa8lur3yZMthwp0RRDU-sy5HhkRsSm1Thl1rfijMnGNiBZjLOQejhBgzmsInnc_3cj2L8rk9oEvkTBvSq02bT_Acqh-LcOit3LdcmatymDxjKZqoq0Ntc_Gx-8QdP6j0CC01THIJ0uFWp_8OKYtJmarU22ozj7i105BwABhWZ-FgSB5R_CRKQUG-d7eD2Y6lmlGn1R0LfbJqx1IqjBy9VJFfT7Ra5LswmEFMMP0d0zvYkBzSAuR39WvbBWPQvxaedPsc7AO2T599ThHXPxHuw2vaQHxMXXIsfhS1ag5pFOY6QO7m9ZwPsTF10kg_jwAlTXWbWyoP_3VKUhDYgJEcBoxA_zUwuCBk9q0mZAYCehvveGrmdPJSN3jN8voz3oFYFdC2OSmkgNnyEy7zA5aWg7Tppk9X_VG1drDVNcSSVJwNM5b9LpFdHlAQ8UqGpnr8wE97FJe0hz1VCQkB0LgiCtFPE32FjSigAPqYjZxs5vvs91rEaJxjUBRnrOU2BDgv38uLQd3w=w1423-h949-no";
+          & {
+            background: url($imgUrl);
+            background-size: cover;
+            background-position: 60% 0;
+          }
+        }
+      }
+      &.requierments {
+        .img {
+          $imgUrl: "http://www.arttherapyblog.com/uimages/2012/08/requirements-list.jpg";
+          & {
+            background: url($imgUrl);
+            background-size: cover;
+            background-position: 60% 0;
+          }
+        }
+      }
+      &.when {
+        .img {
+          $imgUrl: "http://berdnyk.com/wp-content/uploads/2016/06/struktura-publichnoga-vystupleniya.jpg";
+          & {
+            background: url($imgUrl);
+            background-size: cover;
+            background-position: 60% 0;
+            margin-bottom: 5vh;
+          }
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,247 @@
+@import "../../../global_styles/global";
+@import "../../../global_styles/header";
+@import "../../../global_styles/popups";
+
+::-webkit-scrollbar {
+  display: none;
+}
+body {
+  $blockSeparation: 30pt;
+  & {
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: scroll;
+  }
+
+  .block {
+    & {
+      color: rgb(255, 255, 255);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      flex: 0;
+      flex-wrap: wrap;
+
+      width: 100%;
+      overflow: hidden;
+    }
+    .content {
+      h2 {
+        margin: 0;
+      }
+      p {
+        margin: 0;
+      }
+    }
+
+    @media screen and (orientation: portrait) {
+      justify-content: center;
+      * {
+        text-align: center;
+      }
+    }
+
+    &.top {
+      & {
+        $imgUrl: "https://lh3.googleusercontent.com/uH4jH0urKusM1PLh3tFISH2pc4OEatHmehzpX1_k-gn-BQtx4FPixE0--NnPzkJ_-LDqaEwB3YUzh0GMOC0_EiB7vXygOqcMF3vxNIVS-gep33M3aV2FUmW38zu50BfMDd6JMZMTcpiwW1wwIA3CkPob1MFZ5P3PDpmNz0lsPldVcDUto2a0RpUDQPaNu8bBx-H8Iw0PnCHbMjwk_ZdfREdb-l4l_nCjs6q34Xr4beB_jfYC7w8_B0HkAzr5OC6h_WoQHaEKaPnbCVo5Q1QsU_zi-l1LomFLdxdCeLz-PaUY_WudJfcPd6MvxD2g5lZx1zJy2OsDjkLAI-EGJkqKYdzuc8rhjNzUYzHxEKIdYXZKAtDE1_KVgEdsiDNAARRP5kS78Clc9Q5qUwo4tCu0Xg3V8J2aoW3mzz7iWvSCFMo_wsF3u9IpkIVqQvoD4w156_qfMuhnskV4t6QlLN5w-YaXsDNRYQajk9lBZ0MAssOCMGiaP4DPLfKOnmyfuCTlW_g20ep6k8x7bL7GiWNEkvJoe8nvkA2_5T46RWSY9YxawJuc4rg5F0-zQ9UeDAu-A2kweAXXjqRA3S9QoMxJ69OZ4TVqAcQ8k96cIXoep4ngKSftsb27VwD7cwsLBLIU=w1663-h938-no";
+
+        background: rgba(29, 99, 204, 0.9);
+        flex: 1 1 40vh;
+        min-height: min-content;
+
+        margin-top: 5vh;
+        width: 100vw;
+        text-align: center;
+        @media screen and (orientation: portrait) {
+          background: linear-gradient(
+              rgba(29, 119, 204, 0.9),
+              rgba(29, 119, 204, 0.9)
+            ),
+            url($imgUrl);
+          background-size: cover;
+          background-position: bottom center;
+          background-repeat: no-repeat;
+          background-attachment: fixed;
+        }
+      }
+      h2 {
+        font-size: 30pt;
+        text-align: center;
+        width: 100%;
+        margin-top: 5pt;
+      }
+      p {
+        width: 50vw;
+        margin-bottom: 2vh;
+        @media screen and (orientation: portrait) {
+          width: 80vw;
+        }
+      }
+    }
+
+    &.with_pic {
+      & {
+        align-items: flex-start;
+        flex-direction: row;
+        align-items: center;
+        margin-top: $blockSeparation;
+      }
+      @media screen and (orientation: portrait) {
+        .img {
+          display: none;
+        }
+      }
+      // sides
+      &.left {
+        .content {
+          text-align: left;
+        }
+        .img {
+          order: 0;
+        }
+      }
+      &.right {
+        .content {
+          text-align: right;
+        }
+        .img {
+          order: 2;
+        }
+      }
+
+      .content {
+        display: flex;
+        flex-direction: column;
+        h2 {
+        }
+        p {
+          // flex:1;
+          width: 30vw;
+          @media screen and (orientation: portrait) {
+            width: 90vw;
+          }
+        }
+        @media screen and (orientation: portrait) {
+          align-items: center;
+        }
+      }
+      .img {
+        & {
+          border-radius: 100%;
+          width: 20vh;
+          height: 20vh;
+          margin-left: 14pt;
+          margin-right: 14pt;
+        }
+      }
+      //specials
+      &.what_we_do {
+        .img {
+          $imgUrl: "https://lh3.googleusercontent.com/D5gCF-X_Kf2nEgr9rHXd7ArHuzRpR5TSND5f5393GgbBQeWJl8ZodmuIj3OJmKQuXcmWWsYyzR3v4AZ6gN55H9Ko6kA7SqrLhJakbqbuwmDNofSGf1jrQZeBA90jrchWW8BbfSjGYSPWsL4I8BDovA5Sb0w8hdFnbuA3Hg52ZcGiM-8tkT9FM-E1qwaMTUT5YX0YLP3JEAucnP5MJDIfvj9i8yLdcMZevIAww26s6v5OHYhXSfPc8uJoPPMUO-0AYjp_BChcmA1fBqon6fzPa_ZDydSFuLiYM212twWQNadXuQamv3ukQq2vL2MyLSoptp54WkdW8YyA-OZ6jeOiImVukfBb5ZXLHhi2uu-Bfzhw3wr6iijfx2knEEjgsrbcnLlIKqJ5R7BD0cl7Th2khay_i-6CzpFGXaLxcMZFA3ZDT0pLWew1mPpqn9OqH8W2T-ZRJZgg3JJk1nR9fT8Yq5lJQa3hvbLFlQPZiGSpXi2ms_89DgLI0An4LgfJdEB-hIKBAFbt3vwcv85tOe75E55_8t1KB0ythwNHMzMGecvB2sKNt9lD7pmk-AnfnBLesL52FgkTc4vPFx6gQLFHEdI69V2R29ddWRuHKBTfLvktkiYN5xyxlJigX9pm33xy=w1663-h938-no";
+          & {
+            background: url($imgUrl);
+            background-size: cover;
+            background-position: 60% 0;
+          }
+        }
+      }
+      &.what_we_use {
+        .img {
+          $imgUrl: "https://lh3.googleusercontent.com/pw_qIFQFKIhzU8t22IjRaBA--7GTeWyzZQW51i1dWUzHCHZr_p6m2_UV2OKvfomdSBycHexUEz_La_c5KA1Ds_6hxd50s01d97yvS5Lni7AAFdwdZxCyydZYM-7F8b-gI4tGcHGJhF8evdzrTyL8lv5y8TfrXFiUFgahDNVl84iPsiCTho_SLMeXCtqgrRRthRBe1Pvf5ahHwNOKSx6FN4v6zqlBNDN4N0n9YiY8QxfzLFyVLi9QdVHa5ClZPb9MH9szYrXxFW_nnccEJKMIvVktJonRS8ywqASeYv8Vsea53fsu8OPlEXdu3v9BMvLfTu_AqGsx3-Kupp_QzwIG458AQvEj8E8Ry5D_S0hGyBAAS3HAbnIrA4_uemU07Hv6IPEWvXkj3U0J_BlSX7uq1MJoidIac7AunG4QNkbTlz547NQBtIjhsY9u1CJ1RRGiSOfytqnXBUyuz0f2AynkZOCkwws4DldxOjFkQBZrlsRLhBH47SSd41hc4um3vDKkrC46RXQ6nenPqZJcvbyYEz5ivzYZYEdxkOEHVqvxldSJSyWYxP2flyZIaW6_uCKR-5BY3htfGWUoR0qBBl1HgsglhWwOk6-dSuS7Orc-yCzqiyiU658oOcYEYeVug7X9=w1663-h938-no";
+          & {
+            background: url($imgUrl);
+            background-size: cover;
+            background-position: 60% 0;
+          }
+        }
+      }
+      &.info_channel {
+        .img {
+          $imgUrl: "https://postalheritage.files.wordpress.com/2016/01/the-postman-ob1997_5.jpg?w=500";
+          & {
+            background: url($imgUrl);
+            background-size: cover;
+            background-position: 20% 10;
+          }
+        }
+      }
+      &.how_to_enter {
+        .img {
+          $imgUrl: "http://b512ce367ff631898ef1-cfcb7e1d9e47a5f29b338b22733e6f17.r11.cf1.rackcdn.com/2016/09/2016_SeptOct_Handshake_WebExclusive-min-1-1500x1000.jpg";
+          & {
+            background: url($imgUrl);
+            background-size: cover;
+            background-position: 40%;
+          }
+        }
+        & {
+          margin-bottom: $blockSeparation;
+        }
+      }
+    }
+  }
+  #become_field {
+    & {
+      width: 100vw;
+      border-radius: 0;
+      bottom: 0;
+      margin-top: auto;
+      margin-left: 0;
+      margin-right: 0;
+      display: flex;
+      flex-direction: column;
+    }
+    #buttons {
+      & {
+        display: flex;
+        width: 100vw;
+      }
+      button {
+        & {
+          font-size: 16pt;
+          text-transform: capitalize;
+        }
+        @media screen and (orientation: portrait) {
+          font-size: 4vw;
+        }
+      }
+      #bBecome {
+        flex: 1;
+        height: 50pt;
+        &:hover {
+          & {
+            flex: 1.5;
+          }
+        }
+      }
+      #bLogin {
+        flex: 1;
+        height: 50pt;
+        &:hover {
+          & {
+            flex: 1.5;
+          }
+        }
+      }
+    }
+    .form {
+      & {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        width: 100vw;
+        height: 30vh;
+        overflow: hidden;
+        transition: 1s;
+        background: $clrAdditional2;
+      }
+      &.closed {
+        height: 0vh;
+      }
+    }
+  }
+
+  
+}

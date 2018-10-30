@@ -1,0 +1,197 @@
+header {
+  *{
+    user-select: none;
+  }
+  & {
+    flex-wrap: nowrap;
+  }
+  h1 {
+    & {
+      margin-left: 14pt;
+    }
+    #mobile {
+      display: none;
+    }
+    @media screen and (orientation: portrait) {
+      & #full {
+        display: none;
+      }
+      & #mobile {
+        display: block;
+        margin-right: 10pt;
+      }
+    }
+  }
+  #buttonTab {
+    & {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      // flex: 0;
+      flex-grow: 1;
+      @media screen and (orientation: portrait) {
+        & {
+          flex: 1;
+        }
+      }
+    }
+
+    button {
+      & {
+        background: none;
+      }
+      &:hover {
+        color: $clrAccentText;
+      }
+      #mobile {
+        width: 30pt;
+        display: none;
+      }
+      @media screen and (orientation: portrait) {
+        & {
+          width: 30pt;
+        }
+        #mobile {
+          display: block;
+        }
+        p {
+          display: none;
+        }
+      }
+    }
+
+    #bOurEvents {
+      & {
+        margin-left: 0pt;
+        margin-right: 1vw;
+        min-width: 10pt;
+        // width: min-content;
+        padding: 1pt;
+        padding-left: 5pt;
+        flex-wrap: nowrap;
+        flex: 1 1 min-content;
+      }
+      @media screen and (orientation: portrait) {
+        min-width: 0;
+        margin-left: auto;
+      }
+    }
+
+    #clubSelectionTotal {
+      & {
+        display: flex;
+        flex:0;
+        margin-left: 1vw;
+        // flex:1;
+        transition: flex 1s;
+      }
+
+      &:hover{
+        flex: 0 0 30vw;
+      }
+      &:hover>#clubSelectGroup{
+        display:flex;
+      }
+
+      @media screen and (orientation: portrait) {
+        flex:1;
+        height:6vh;
+
+        &:hover{
+          flex: 1;
+        }
+      }
+
+      #bClubSelect {
+        // flex:1;
+        flex-shrink: 0;
+        overflow: hidden;
+        transition: 1s;
+        @media screen and (orientation: portrait) {
+          display: none;
+        }
+      }
+
+      #clubSelectGroup {
+        & {
+          display: none;
+          align-items: center;
+          flex: 1;
+          // transition: flex 0.1s ease;
+        }
+
+        @media screen and (orientation: portrait) {
+          flex:1 1 10%;
+          display: flex;
+        }
+
+        .itm {
+          & {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: 1s;
+            margin-left: 2pt;
+            margin-right: 2pt;
+
+            flex:1;
+            height: 80%;
+
+            transition: 1s;
+
+            cursor: pointer;
+          }
+          #image {
+            margin: 0;
+            width: 100%;
+            height: 100%;
+            // width: 30pt;
+            // height: 30pt;
+            background-size: 3vh;
+            background-position: center;
+            background-repeat: no-repeat;
+            user-select: none;
+            border-radius: 10pt;
+            transition: 1s;
+
+            &:hover + p {
+              display: block;
+              opacity: 0.7;
+            }
+            &:hover {
+              background-color: $clrAccent;
+            }
+          }
+          p {
+            display: none;
+            margin: 0;
+            opacity: 0;
+            user-select: none;
+            position: absolute;
+            margin-top: 30pt;
+            transition: 1s;
+          }
+        }
+        #global #image {
+          background-image: url("/pics/wheel.png");
+        }
+        #design #image {
+          background-image: url("/pics/block.png");
+        }
+        #cyber #image {
+          background-image: url("/pics/anonymous-mask.png");
+        }
+        #space #image {
+          background-image: url("/pics/rocket.png");
+        }
+        #vr #image {
+          background-image: url("/pics/vr.png");
+        }
+        #poker #image {
+          background-image: url("/pics/poker.png");
+        }
+      }
+    }
+  }
+}

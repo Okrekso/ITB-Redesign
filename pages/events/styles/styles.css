@@ -1,0 +1,721 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  min-height: 100vh;
+}
+
+body {
+  background: #3398eb;
+  margin: 0;
+  padding: 0;
+  font-family: "Niramit", sans-serif;
+  min-height: 100vh;
+  color: White;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body header {
+  position: fixed;
+  padding-top: 2pt;
+  padding-bottom: 2pt;
+  background: -webkit-gradient(linear, left top, right top, color-stop(1%, #1d63cc), to(#0b4aa8));
+  background: linear-gradient(to right, #1d63cc 1%, #0b4aa8);
+  height: 5vh;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body header h1 {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 5pt;
+}
+
+::-webkit-scrollbar-track {
+  background: #1452ad;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #068fff;
+}
+
+button {
+  color: white;
+  background: #0b4eb3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  border: none;
+  outline: none;
+  font-size: 16pt;
+  padding: 5pt;
+  padding-right: 10pt;
+  padding-left: 10pt;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+button:hover {
+  background: #1365e0;
+  cursor: pointer;
+}
+
+input {
+  background: #124085;
+  color: white;
+  font-family: "Niramit", sans-serif;
+  border: none;
+}
+
+.separator {
+  width: 100%;
+  height: 1pt;
+  background: rgba(0, 0, 0, 0.1);
+  margin-top: 15pt;
+  margin-bottom: 15pt;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+header * {
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+header {
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+}
+
+header h1 {
+  margin-left: 14pt;
+}
+
+header h1 #mobile {
+  display: none;
+}
+
+@media screen and (orientation: portrait) {
+  header h1 #full {
+    display: none;
+  }
+  header h1 #mobile {
+    display: block;
+    margin-right: 10pt;
+  }
+}
+
+header #buttonTab {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-flex: 1;
+      -ms-flex-positive: 1;
+          flex-grow: 1;
+}
+
+@media screen and (orientation: portrait) {
+  header #buttonTab {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+}
+
+header #buttonTab button {
+  background: none;
+}
+
+header #buttonTab button:hover {
+  color: #5ea9ff;
+}
+
+header #buttonTab button #mobile {
+  width: 30pt;
+  display: none;
+}
+
+@media screen and (orientation: portrait) {
+  header #buttonTab button {
+    width: 30pt;
+  }
+  header #buttonTab button #mobile {
+    display: block;
+  }
+  header #buttonTab button p {
+    display: none;
+  }
+}
+
+header #buttonTab #bOurEvents {
+  margin-left: 0pt;
+  margin-right: 1vw;
+  min-width: 10pt;
+  padding: 1pt;
+  padding-left: 5pt;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 1 min-content;
+          flex: 1 1 min-content;
+}
+
+@media screen and (orientation: portrait) {
+  header #buttonTab #bOurEvents {
+    min-width: 0;
+    margin-left: auto;
+  }
+}
+
+header #buttonTab #clubSelectionTotal {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+  margin-left: 1vw;
+  -webkit-transition: -webkit-box-flex 1s;
+  transition: -webkit-box-flex 1s;
+  transition: flex 1s;
+  transition: flex 1s, -webkit-box-flex 1s, -ms-flex 1s;
+}
+
+header #buttonTab #clubSelectionTotal:hover {
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0 30vw;
+          flex: 0 0 30vw;
+}
+
+header #buttonTab #clubSelectionTotal:hover > #clubSelectGroup {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+@media screen and (orientation: portrait) {
+  header #buttonTab #clubSelectionTotal {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+    height: 6vh;
+  }
+  header #buttonTab #clubSelectionTotal:hover {
+    -webkit-box-flex: 1;
+        -ms-flex: 1;
+            flex: 1;
+  }
+}
+
+header #buttonTab #clubSelectionTotal #bClubSelect {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  overflow: hidden;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+@media screen and (orientation: portrait) {
+  header #buttonTab #clubSelectionTotal #bClubSelect {
+    display: none;
+  }
+}
+
+header #buttonTab #clubSelectionTotal #clubSelectGroup {
+  display: none;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+@media screen and (orientation: portrait) {
+  header #buttonTab #clubSelectionTotal #clubSelectGroup {
+    -webkit-box-flex: 1;
+        -ms-flex: 1 1 10%;
+            flex: 1 1 10%;
+    display: -webkit-box;
+    display: -ms-flexbox;
+    display: flex;
+  }
+}
+
+header #buttonTab #clubSelectionTotal #clubSelectGroup .itm {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 1s;
+  transition: 1s;
+  margin-left: 2pt;
+  margin-right: 2pt;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+  height: 80%;
+  transition: 1s;
+  cursor: pointer;
+}
+
+header #buttonTab #clubSelectionTotal #clubSelectGroup .itm #image {
+  margin: 0;
+  width: 100%;
+  height: 100%;
+  background-size: 3vh;
+  background-position: center;
+  background-repeat: no-repeat;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  border-radius: 10pt;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+header #buttonTab #clubSelectionTotal #clubSelectGroup .itm #image:hover + p {
+  display: block;
+  opacity: 0.7;
+}
+
+header #buttonTab #clubSelectionTotal #clubSelectGroup .itm #image:hover {
+  background-color: #068fff;
+}
+
+header #buttonTab #clubSelectionTotal #clubSelectGroup .itm p {
+  display: none;
+  margin: 0;
+  opacity: 0;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  position: absolute;
+  margin-top: 30pt;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+header #buttonTab #clubSelectionTotal #clubSelectGroup #global #image {
+  background-image: url("/pics/wheel.png");
+}
+
+header #buttonTab #clubSelectionTotal #clubSelectGroup #design #image {
+  background-image: url("/pics/block.png");
+}
+
+header #buttonTab #clubSelectionTotal #clubSelectGroup #cyber #image {
+  background-image: url("/pics/anonymous-mask.png");
+}
+
+header #buttonTab #clubSelectionTotal #clubSelectGroup #space #image {
+  background-image: url("/pics/rocket.png");
+}
+
+header #buttonTab #clubSelectionTotal #clubSelectGroup #vr #image {
+  background-image: url("/pics/vr.png");
+}
+
+header #buttonTab #clubSelectionTotal #clubSelectGroup #poker #image {
+  background-image: url("/pics/poker.png");
+}
+
+@-webkit-keyframes boop {
+  0% {
+    height: 0;
+    -webkit-box-flex: 0;
+            flex: 0;
+  }
+  30% {
+    -webkit-box-flex: 0;
+            flex: 0 0 60vw;
+    height: 60vw;
+  }
+  100% {
+    -webkit-box-flex: 0;
+            flex: 0 0 50vw;
+    height: 50vw;
+  }
+}
+
+@keyframes boop {
+  0% {
+    height: 0;
+    -webkit-box-flex: 0;
+        -ms-flex: 0;
+            flex: 0;
+  }
+  30% {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 60vw;
+            flex: 0 0 60vw;
+    height: 60vw;
+  }
+  100% {
+    -webkit-box-flex: 0;
+        -ms-flex: 0 0 50vw;
+            flex: 0 0 50vw;
+    height: 50vw;
+  }
+}
+
+body {
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body ::-webkit-scrollbar {
+  height: 6pt;
+}
+
+body ::-webkit-scrollbar-thumb {
+  border-radius: 10vw;
+}
+
+body #content {
+  width: 100vw;
+  height: 95vh;
+  margin-top: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+body #event {
+  background: #0378d8;
+  -webkit-box-flex: 15;
+      -ms-flex: 15;
+          flex: 15;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-flow: column nowrap;
+          flex-flow: column nowrap;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  padding: 2vw;
+}
+
+@media screen and (orientation: portrait) {
+  body #event {
+    width: 100vw;
+  }
+}
+
+body #event #info {
+  display: none;
+}
+
+@-webkit-keyframes anim {
+  0% {
+    margin-left: -2vw;
+    opacity: 0;
+  }
+  100% {
+    margin-left: 0vw;
+    opacity: 1;
+  }
+}
+
+@keyframes anim {
+  0% {
+    margin-left: -2vw;
+    opacity: 0;
+  }
+  100% {
+    margin-left: 0vw;
+    opacity: 1;
+  }
+}
+
+body #event.enabled {
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: start;
+      -ms-flex-align: start;
+          align-items: flex-start;
+}
+
+body #event.enabled #about {
+  display: none;
+}
+
+body #event.enabled #info {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+body #event.enabled #info.anim {
+  -webkit-animation: anim 1s ease;
+          animation: anim 1s ease;
+}
+
+body #event_list {
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+  background: #1452ad;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  overflow-y: scroll;
+}
+
+body #event_list #items {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-transition: 1s;
+  transition: 1s;
+  margin: 10pt;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0;
+          flex: 0 0;
+}
+
+body #event_list .event {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 30pt;
+          flex: 1 0 30pt;
+  background: #068fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 90%;
+  border-radius: 20pt;
+  -webkit-transition: 0.75s;
+  transition: 0.75s;
+  margin: 5pt;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body #event_list .event p {
+  margin-left: 5pt;
+}
+
+body #event_list .event.active {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 40pt;
+          flex: 1 0 40pt;
+  background: #1dcc74;
+}
+
+body #event_list .event.active.active {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 40pt;
+          flex: 1 0 40pt;
+  background: #1dcc74;
+}
+
+body #event_list .event:hover {
+  background: #47acff;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 32pt;
+          flex: 1 0 32pt;
+}
+
+body #visits {
+  -webkit-box-flex: 0;
+      -ms-flex: 0;
+          flex: 0;
+  background: #1452ad;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  overflow-y: scroll;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+body #visits h2 {
+  margin-top: 1vh;
+  font-size: 1.5vh;
+  width: 100%;
+  text-align: center;
+}
+
+body #visits #items {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: auto;
+  -webkit-transition: 1s;
+  transition: 1s;
+  -webkit-box-flex: 0;
+      -ms-flex: 0 0;
+          flex: 0 0;
+}
+
+body #visits.opened {
+  -webkit-box-flex: 5;
+      -ms-flex: 5;
+          flex: 5;
+}
+
+body #visits .visit {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 30pt;
+          flex: 1 0 30pt;
+  background: #068fff;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 90%;
+  border-radius: 20pt;
+  -webkit-transition: 0.75s;
+  transition: 0.75s;
+  -webkit-transform-origin: center center;
+          transform-origin: center center;
+  margin: 5pt;
+  cursor: pointer;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+}
+
+body #visits .visit p {
+  margin-left: 5pt;
+}
+
+body #visits .visit.active {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 40pt;
+          flex: 1 0 40pt;
+  background: #1dcc74;
+}
+
+body #visits .visit.active.active {
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 40pt;
+          flex: 1 0 40pt;
+  background: #1dcc74;
+}
+
+body #visits .visit:hover {
+  background: #47acff;
+  -webkit-box-flex: 1;
+      -ms-flex: 1 0 32pt;
+          flex: 1 0 32pt;
+}
+/*# sourceMappingURL=styles.css.map */

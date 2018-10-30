@@ -1,0 +1,201 @@
+@import "../../../global_styles/global";
+@import "../../../global_styles/header";
+
+::-webkit-scrollbar {
+  display: none;
+}
+body {
+  $blockSeparation: 30pt;
+  & {
+    align-items: center;
+    flex-direction: column;
+    overflow-x: hidden;
+    overflow-y: scroll;
+    background: rgb(9, 75, 47);
+    color: rgb(255, 255, 255);
+  }
+
+  .topHead {
+    font-size: 16pt;
+  }
+  .parallax-slider {
+    filter: blur(10pt);
+    overflow: hidden;
+  }
+  .block {
+    & {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      flex: 0;
+      flex-wrap: wrap;
+      width: 100%;
+      overflow: hidden;
+    }
+    .content {
+      h2 {
+        margin: 0;
+      }
+      p {
+        margin: 0;
+      }
+    }
+
+    @media screen and (orientation: portrait) {
+      justify-content: center;
+      * {
+        text-align: center;
+      }
+      h2 {
+        font-size: 16pt;
+      }
+    }
+
+    &.top {
+      $imgUrl: "/pics/photos/poker_bg.jpg";
+      & {
+        color: white;
+        flex: 1 1 100vh - $headerHeight;
+        min-height: min-content;
+
+        display: flex;
+        justify-content: center;
+        align-items: center;
+
+        margin-top: 5vh;
+        width: 100vw;
+        text-align: center;
+
+        @media screen and (orientation: portrait) {
+          & {
+            background-position-x: 30%;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+          }
+        }
+      }
+      .bg {
+        width: 100vw;
+        height: 100vh - $headerHeight;
+        background: rgba(0, 0, 0, 0.8);
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        @media screen and (orientation: portrait) {
+          background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.99)),
+            url($imgUrl);
+            background-size: cover;
+            background-position: center;
+        }
+      }
+      h2 {
+        font-size: 30pt;
+        text-align: center;
+        padding-left: 2vw;
+        padding-right: 2vw;
+        margin-bottom: 5vh;
+        background: rgba(0, 0, 0, 0.75);
+        margin-top: auto;
+        @media screen and (orientation: portrait) {
+          font-size: 20pt;
+        }
+      }
+      p {
+        width: 50vw;
+        @media screen and (orientation: portrait) {
+          width: 80vw;
+        }
+      }
+      #circled-parts {
+        & {
+          display: flex;
+          align-items: flex-start;
+          @media screen and (orientation: portrait) {
+            flex-direction: column;
+            justify-content: center;
+          }
+        }
+        .circled {
+          & {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            margin: 10pt;
+
+            $sizeBtw: 5vw;
+            margin-left: $sizeBtw;
+            margin-right: $sizeBtw;
+          }
+          .img {
+            border-radius: 100%;
+            width: 20vw;
+            height: 20vw;
+          }
+          h3 {
+            font-size: 20pt;
+            transition: 1s ease;
+            @media screen and (orientation: portrait) {
+              font-size: 2.8vw;
+            }
+          }
+          p {
+            width: 20vw;
+            opacity: 0;
+            flex: 1 0;
+            overflow: hidden;
+            color: red;
+            transition: 1s ease;
+            @media screen and (orientation: portrait) {
+              font-size: 4vw;
+              height: 0;
+              width: 95vw;
+            }
+          }
+
+          &:hover > p {
+            opacity: 1;
+            @media screen and (orientation: portrait) {
+              height: auto;
+            }
+          }
+          &:hover > h3 {
+            font-size: 30pt;
+            @media screen and (orientation: portrait) {
+              font-size: 3vw;
+            }
+          }
+
+          &.learnHow {
+            .img {
+              $imgSrc: "/pics/photos/poker0.png";
+              background: url($imgSrc);
+              background-size: 100%;
+            }
+          }
+          &.takePart {
+            .img {
+              $imgSrc: "/pics/photos/poker1.png";
+              background: url($imgSrc);
+              background-size: 100%;
+            }
+          }
+          &.raiseRate {
+            .img {
+              $imgSrc: "/pics/photos/poker2.png";
+              background: url($imgSrc);
+              background-size: 100%;
+            }
+          }
+        }
+      }
+      #info {
+        margin-top: auto;
+        margin-bottom: 5pt;
+      }
+    }
+  }
+}

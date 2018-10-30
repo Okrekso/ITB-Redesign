@@ -1,0 +1,13 @@
+RewriteEngine on
+
+ErrorDocument 404 /pages/404/index.html
+ErrorDocument 500 /pages/404/index.html
+
+RewriteCond %{REQUEST_URI} ^/$
+RewriteRule ^(.*)$ /pages/index/$1 [L]
+
+RewriteCond %{REQUEST_FILENAME} !-f 
+RewriteCond %{REQUEST_FILENAME} !-d
+RewriteRule ^(.+)\/$ /pages/$1 [L]
+
+RewriteRule ^pages/$ / [R,L]

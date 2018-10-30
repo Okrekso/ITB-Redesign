@@ -1,0 +1,141 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  min-height: 100vh;
+}
+
+body {
+  background: #3398eb;
+  margin: 0;
+  padding: 0;
+  font-family: "Niramit", sans-serif;
+  min-height: 100vh;
+  color: White;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body header {
+  position: fixed;
+  padding-top: 2pt;
+  padding-bottom: 2pt;
+  background: -webkit-gradient(linear, left top, right top, color-stop(1%, #1d63cc), to(#0b4aa8));
+  background: linear-gradient(to right, #1d63cc 1%, #0b4aa8);
+  height: 5vh;
+  color: white;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -webkit-box-pack: start;
+      -ms-flex-pack: start;
+          justify-content: flex-start;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+body header h1 {
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
+  cursor: pointer;
+}
+
+::-webkit-scrollbar {
+  width: 5pt;
+}
+
+::-webkit-scrollbar-track {
+  background: #1452ad;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #068fff;
+}
+
+button {
+  color: white;
+  background: #0b4eb3;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  margin: 0;
+  border: none;
+  outline: none;
+  font-size: 16pt;
+  padding: 5pt;
+  padding-right: 10pt;
+  padding-left: 10pt;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+button:hover {
+  background: #1365e0;
+  cursor: pointer;
+}
+
+input {
+  background: #124085;
+  color: white;
+  font-family: "Niramit", sans-serif;
+  border: none;
+}
+
+.separator {
+  width: 100%;
+  height: 1pt;
+  background: rgba(0, 0, 0, 0.1);
+  margin-top: 15pt;
+  margin-bottom: 15pt;
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+}
+
+html {
+  widows: 100%;
+  height: 100%;
+}
+
+body {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 100%;
+  height: 100%;
+}
+
+body img {
+  width: 10vw;
+}
+/*# sourceMappingURL=styles.css.map */
