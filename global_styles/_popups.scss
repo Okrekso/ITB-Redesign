@@ -1,153 +1,188 @@
 #popup-field {
-  & {
-    position: fixed;
-    width: 100vw;
-    height: 100vh;
+	& {
+		position: fixed;
+		width: 100vw;
+		height: 100vh;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    opacity: 1;
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		opacity: 1;
 
-    background: rgba(6, 18, 44, 0.8);
-    transition: opacity 1s;
-  }
-  &.closed {
-    opacity: 0;
-    display: none;
-  }
-  @keyframes animEnter {
-    0% {
-      opacity: 0;
-    }
-    100% {
-      opacity: 1;
-    }
-  }
-  @keyframes animOuter {
-    0% {
-      opacity: 1;
-    }
-    100% {
-      opacity: 0;
-    }
-  }
-  &.animationEnter {
-    animation: animEnter 1s ease-out;
-  }
-  &.animationOuter {
-    animation: animOuter 1s ease;
-  }
-  .popup {
-    & {
-      width: 50vw;
-      height: 30vw;
-      border-radius: 10pt;
-      background: $clrAdditional;
-      padding: 5pt;
+		background: rgba(6, 18, 44, 0.8);
+		transition: opacity 1s;
+	}
+	&.closed {
+		opacity: 0;
+		display: none;
+	}
+	@keyframes animEnter {
+		0% {
+			opacity: 0;
+		}
+		100% {
+			opacity: 1;
+		}
+	}
+	@keyframes animOuter {
+		0% {
+			opacity: 1;
+		}
+		100% {
+			opacity: 0;
+		}
+	}
+	&.animationEnter {
+		animation: animEnter 1s ease-out;
+	}
+	&.animationOuter {
+		animation: animOuter 1s ease;
+	}
+	.popup {
+		& {
+			width: 50vw;
+			height: min-content;
+			border-radius: 10pt;
+			background: $clrAdditional;
+			padding: 5pt;
 
-      display: flex;
-      flex-direction: column;
-      @media screen and (orientation: portrait) {
-        width: 90vw;
-        height: 150vw;
-      }
-    }
-    // fields
-    .header {
-      & {
-        display: flex;
-        align-items: center;
-      }
-      #bBack {
-        & {
-          margin: 0;
-          width: 30pt;
-          height: 30pt;
-          border-radius: 100%;
+			display: flex;
+			flex-direction: column;
+			@media screen and (orientation: portrait) {
+				width: 90vw;
+				height: auto;
+			}
+		}
+		// fields
+		.header {
+			& {
+				display: flex;
+				height: max-content;
+				align-items: center;
+			}
+			#bBack {
+				& {
+					margin: 0;
+					width: 30pt;
+					height: 30pt;
+					border-radius: 100%;
 
-          display: flex;
-          justify-content: center;
-          align-items: center;
-        }
-        img {
-          width: 100%;
-        }
-      }
-      h3 {
-        margin-left: 5pt;
-      }
-    }
-    .fields {
-      .field {
-        & {
-          display: flex;
-          width: 100%;
-          margin-top: 5pt;
-        }
-        p {
-          flex: max-content 0;
-          // background: red;
-        }
-        input {
-          margin-left: 5pt;
-          padding-left: 5pt;
-          padding-right: 5pt;
-          flex: auto;
-        }
-      }
-    }
-    #buttons {
-      width: 100%;
-      display: flex;
-      flex-direction: column;
-      margin-top: auto;
-    }
-    button {
-      & {
-        margin: 5pt;
-        background: $clrAccent2;
-        margin-top: auto;
-        // text-transform: capitalize;
-        border-radius: 6pt;
-      }
-      &:hover {
-        background: $clrAccent;
-      }
-    }
-    // fields
-    @keyframes anim-enter {
-      0% {
-        margin-left: -5vw;
-        opacity: 0;
-      }
-      100% {
-        margin-left: 0vw;
-        opacity: 1;
-      }
-    }
-    @keyframes anim-outer {
-      0% {
-        margin-left: 0vw;
-        opacity: 1;
-      }
-      100% {
-        margin-left: -5vw;
-        opacity: 0;
-      }
-    }
-    &.closed {
-      opacity: 0;
-      display: none;
-    }
-    &.animationEnter {
-      animation: anim-enter 1s ease;
-      animation-play-state: running;
-    }
-    &.animationOuter {
-      opacity: 0;
-      animation: anim-outer 1s ease;
-      animation-play-state: running;
-    }
-  }
+					display: flex;
+					justify-content: center;
+					align-items: center;
+				}
+				img {
+					width: 100%;
+				}
+			}
+			h3 {
+				margin-left: 5pt;
+			}
+		}
+		.fields {
+			& {
+			}
+			.field {
+				& {
+					display: flex;
+					width: 100%;
+					margin-top: 5pt;
+				}
+
+				p {
+					flex: max-content 0;
+					// background: red;
+				}
+				input {
+					margin-left: 5pt;
+					padding-left: 5pt;
+					padding-right: 5pt;
+					flex: auto;
+					transition: 1s;
+					&.incorrect {
+						background: rgb(202, 48, 48);
+					}
+				}
+			}
+		}
+		.buttons {
+			& {
+				width: 100%;
+				display: flex;
+				align-items: center;
+				flex-direction: column;
+				margin-top: 20pt;
+			}
+			button {
+				& {
+					margin: 4pt;
+					background: $clrAccent2;
+					width: 100%;
+					border-radius: 6pt;
+					font-size: 10pt;
+				}
+				&:hover {
+					background: $clrAccent;
+				}
+			}
+		}
+		button {
+			& {
+				margin: 4pt;
+				background: $clrAccent2;
+				width: 100%;
+				border-radius: 6pt;
+				font-size: 10pt;
+				&:hover {
+					background: $clrAccent;
+				}
+			}
+		}
+		// fields
+		@keyframes anim-enter {
+			0% {
+				margin-left: -5vw;
+				opacity: 0;
+			}
+			100% {
+				margin-left: 0vw;
+				opacity: 1;
+			}
+		}
+		@keyframes anim-outer {
+			0% {
+				margin-left: 0vw;
+				opacity: 1;
+			}
+			100% {
+				margin-left: -5vw;
+				opacity: 0;
+			}
+		}
+		&.closed {
+			opacity: 0;
+			display: none;
+		}
+		&.animationEnter {
+			animation: anim-enter 1s ease;
+			animation-play-state: running;
+		}
+		&.animationOuter {
+			opacity: 0;
+			animation: anim-outer 1s ease;
+			animation-play-state: running;
+		}
+	}
+	#loading {
+		.textes {
+			& {
+				display: flex;
+				justify-content: center;
+				align-items: center;
+			}
+			img {
+				width: 15vw;
+			}
+		}
+	}
 }

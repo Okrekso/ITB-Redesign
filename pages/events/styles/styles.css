@@ -136,6 +136,12 @@ header h1 #mobile {
   display: none;
 }
 
+@media screen and (pointer: coarse) {
+  header h1 {
+    font-size: 16pt;
+  }
+}
+
 @media screen and (orientation: portrait) {
   header h1 #full {
     display: none;
@@ -417,6 +423,284 @@ header #buttonTab #clubSelectionTotal #clubSelectGroup #poker #image {
   }
 }
 
+#popup-field {
+  position: fixed;
+  width: 100vw;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  opacity: 1;
+  background: rgba(6, 18, 44, 0.8);
+  -webkit-transition: opacity 1s;
+  transition: opacity 1s;
+}
+
+#popup-field.closed {
+  opacity: 0;
+  display: none;
+}
+
+@-webkit-keyframes animEnter {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@keyframes animEnter {
+  0% {
+    opacity: 0;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes animOuter {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+@keyframes animOuter {
+  0% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+  }
+}
+
+#popup-field.animationEnter {
+  -webkit-animation: animEnter 1s ease-out;
+          animation: animEnter 1s ease-out;
+}
+
+#popup-field.animationOuter {
+  -webkit-animation: animOuter 1s ease;
+          animation: animOuter 1s ease;
+}
+
+#popup-field .popup {
+  width: 50vw;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
+  border-radius: 10pt;
+  background: #1452ad;
+  padding: 5pt;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+@media screen and (orientation: portrait) {
+  #popup-field .popup {
+    width: 90vw;
+    height: auto;
+  }
+}
+
+#popup-field .popup .header {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#popup-field .popup .header #bBack {
+  margin: 0;
+  width: 30pt;
+  height: 30pt;
+  border-radius: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#popup-field .popup .header #bBack img {
+  width: 100%;
+}
+
+#popup-field .popup .header h3 {
+  margin-left: 5pt;
+}
+
+#popup-field .popup .fields .field {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  width: 100%;
+  margin-top: 5pt;
+}
+
+#popup-field .popup .fields .field p {
+  -webkit-box-flex: max-content;
+      -ms-flex: max-content 0;
+          flex: max-content 0;
+}
+
+#popup-field .popup .fields .field input {
+  margin-left: 5pt;
+  padding-left: 5pt;
+  padding-right: 5pt;
+  -webkit-box-flex: 1;
+      -ms-flex: auto;
+          flex: auto;
+  -webkit-transition: 1s;
+  transition: 1s;
+}
+
+#popup-field .popup .fields .field input.incorrect {
+  background: #ca3030;
+}
+
+#popup-field .popup .buttons {
+  width: 100%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  margin-top: 20pt;
+}
+
+#popup-field .popup .buttons button {
+  margin: 4pt;
+  background: #0378d8;
+  width: 100%;
+  border-radius: 6pt;
+  font-size: 10pt;
+}
+
+#popup-field .popup .buttons button:hover {
+  background: #068fff;
+}
+
+#popup-field .popup button {
+  margin: 4pt;
+  background: #0378d8;
+  width: 100%;
+  border-radius: 6pt;
+  font-size: 10pt;
+}
+
+#popup-field .popup button:hover {
+  background: #068fff;
+}
+
+@-webkit-keyframes anim-enter {
+  0% {
+    margin-left: -5vw;
+    opacity: 0;
+  }
+  100% {
+    margin-left: 0vw;
+    opacity: 1;
+  }
+}
+
+@keyframes anim-enter {
+  0% {
+    margin-left: -5vw;
+    opacity: 0;
+  }
+  100% {
+    margin-left: 0vw;
+    opacity: 1;
+  }
+}
+
+@-webkit-keyframes anim-outer {
+  0% {
+    margin-left: 0vw;
+    opacity: 1;
+  }
+  100% {
+    margin-left: -5vw;
+    opacity: 0;
+  }
+}
+
+@keyframes anim-outer {
+  0% {
+    margin-left: 0vw;
+    opacity: 1;
+  }
+  100% {
+    margin-left: -5vw;
+    opacity: 0;
+  }
+}
+
+#popup-field .popup.closed {
+  opacity: 0;
+  display: none;
+}
+
+#popup-field .popup.animationEnter {
+  -webkit-animation: anim-enter 1s ease;
+          animation: anim-enter 1s ease;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+#popup-field .popup.animationOuter {
+  opacity: 0;
+  -webkit-animation: anim-outer 1s ease;
+          animation: anim-outer 1s ease;
+  -webkit-animation-play-state: running;
+          animation-play-state: running;
+}
+
+#popup-field #loading .textes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#popup-field #loading .textes img {
+  width: 15vw;
+}
+
 body {
   -webkit-box-align: center;
       -ms-flex-align: center;
@@ -469,6 +753,18 @@ body #event {
 
 body #event #info {
   display: none;
+}
+
+body #event h2 {
+  word-wrap: normal;
+}
+
+body #event h3 {
+  color: rgba(221, 221, 221, 0.75);
+}
+
+body #event #date {
+  color: rgba(37, 37, 37, 0.336);
 }
 
 @-webkit-keyframes anim {
@@ -573,6 +869,8 @@ body #event_list .event {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   width: 90%;
   border-radius: 20pt;
   -webkit-transition: 0.75s;
@@ -586,7 +884,9 @@ body #event_list .event {
 }
 
 body #event_list .event p {
-  margin-left: 5pt;
+  font-size: 50%;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 body #event_list .event.active {
@@ -601,6 +901,73 @@ body #event_list .event.active.active {
       -ms-flex: 1 0 40pt;
           flex: 1 0 40pt;
   background: #1dcc74;
+}
+
+body #event_list .event.active.new {
+  -webkit-animation: none;
+          animation: none;
+}
+
+@-webkit-keyframes anim_event_new {
+  0% {
+    background: #068fff;
+  }
+  100% {
+    background: #1dcc74;
+  }
+}
+
+@keyframes anim_event_new {
+  0% {
+    background: #068fff;
+  }
+  100% {
+    background: #1dcc74;
+  }
+}
+
+body #event_list .event.new {
+  -webkit-animation-name: anim_event_new;
+          animation-name: anim_event_new;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
+}
+
+@-webkit-keyframes anim_event_inAction {
+  0% {
+    background: #c7ab0d;
+  }
+  100% {
+    background: #ecca06;
+  }
+}
+
+@keyframes anim_event_inAction {
+  0% {
+    background: #c7ab0d;
+  }
+  100% {
+    background: #ecca06;
+  }
+}
+
+body #event_list .event.inAction {
+  -webkit-animation-name: anim_event_inAction;
+          animation-name: anim_event_inAction;
+  -webkit-animation-duration: 2s;
+          animation-duration: 2s;
+  -webkit-animation-iteration-count: infinite;
+          animation-iteration-count: infinite;
+  -webkit-animation-timing-function: ease-in-out;
+          animation-timing-function: ease-in-out;
+  -webkit-animation-direction: alternate;
+          animation-direction: alternate;
 }
 
 body #event_list .event:hover {
@@ -680,6 +1047,8 @@ body #visits .visit {
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -ms-flex-wrap: nowrap;
+      flex-wrap: nowrap;
   width: 90%;
   border-radius: 20pt;
   -webkit-transition: 0.75s;
@@ -695,7 +1064,9 @@ body #visits .visit {
 }
 
 body #visits .visit p {
-  margin-left: 5pt;
+  font-size: 50%;
+  white-space: nowrap;
+  overflow: hidden;
 }
 
 body #visits .visit.active {

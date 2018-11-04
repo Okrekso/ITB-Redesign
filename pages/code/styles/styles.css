@@ -136,6 +136,12 @@ header h1 #mobile {
   display: none;
 }
 
+@media screen and (pointer: coarse) {
+  header h1 {
+    font-size: 16pt;
+  }
+}
+
 @media screen and (orientation: portrait) {
   header h1 #full {
     display: none;
@@ -477,7 +483,7 @@ body .block.top {
   text-align: center;
 }
 
-@media screen and (orientation: portrait) {
+@media screen and (orientation: portrait), screen and (pointer: coarse) {
   body .block.top {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(29, 119, 204, 0.9)), to(rgba(29, 119, 204, 0.9))), url("https://lh3.googleusercontent.com/yASQPI0o6fSPLhV-Tor4eIKUhy5llexCrEXh85YzcGOfiDLs4VMv83WfPJZGQkeyZbrtuuuSWvkJF01JOuro-eiFFT5HsiUg9lfFOjTWZ5mfd5tCzB-6Ub2l-sLa7rqn-S0qBj0vOyzyjNy5UWEmF6pjxxHIqklrPQMPcTqmQa5rbIEdD9JjbfcSnrNkLt9G0pWzZg4rj4bjyHqY60a1-m9TMtSQkrifoDwiQ8OR3E_cDWS_Rrs_1BHFjHuSW3jvHVuA2TMGoaN0a3VgzRjGNslgk2jzIE38XG9aFrei8sU6OTHLuYlGr92sk_llpAnF7Zk0naaNhv2P-aeOzDt9jS_rplx5NNM7IUt-NTXF7mKwyhX1F2ALIkGheEQDuB3p0jFLNSGmIEIGQevy-k9BL26tqV9HCAZYj_CYfzrDh5F8bNfW4uxaJYMo56PfL0uyIpEJchJWT0682xQQhYBuGyIj3azO7aTDMTQkL-1S8ZSeotIL7M6FuK-TykoYAeDlWvWRFyo65Yax7pDhvb_5oZ_SBBg8tvGJJEE7LNwJV3LEeCFelYQ-zJ_H-L5bxAfKCLvuDKS6-e9B_bMr1y-w7Lp7zEYQsxI7fW_AdXtnsiGiiZgQIGM3fW4NRecC7CT3vH2wJMkeOlKEafg-7ddsrOlxAg=w1681-h948-no");
     background: linear-gradient(rgba(29, 119, 204, 0.9), rgba(29, 119, 204, 0.9)), url("https://lh3.googleusercontent.com/yASQPI0o6fSPLhV-Tor4eIKUhy5llexCrEXh85YzcGOfiDLs4VMv83WfPJZGQkeyZbrtuuuSWvkJF01JOuro-eiFFT5HsiUg9lfFOjTWZ5mfd5tCzB-6Ub2l-sLa7rqn-S0qBj0vOyzyjNy5UWEmF6pjxxHIqklrPQMPcTqmQa5rbIEdD9JjbfcSnrNkLt9G0pWzZg4rj4bjyHqY60a1-m9TMtSQkrifoDwiQ8OR3E_cDWS_Rrs_1BHFjHuSW3jvHVuA2TMGoaN0a3VgzRjGNslgk2jzIE38XG9aFrei8sU6OTHLuYlGr92sk_llpAnF7Zk0naaNhv2P-aeOzDt9jS_rplx5NNM7IUt-NTXF7mKwyhX1F2ALIkGheEQDuB3p0jFLNSGmIEIGQevy-k9BL26tqV9HCAZYj_CYfzrDh5F8bNfW4uxaJYMo56PfL0uyIpEJchJWT0682xQQhYBuGyIj3azO7aTDMTQkL-1S8ZSeotIL7M6FuK-TykoYAeDlWvWRFyo65Yax7pDhvb_5oZ_SBBg8tvGJJEE7LNwJV3LEeCFelYQ-zJ_H-L5bxAfKCLvuDKS6-e9B_bMr1y-w7Lp7zEYQsxI7fW_AdXtnsiGiiZgQIGM3fW4NRecC7CT3vH2wJMkeOlKEafg-7ddsrOlxAg=w1681-h948-no");

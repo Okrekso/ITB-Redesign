@@ -136,6 +136,12 @@ header h1 #mobile {
   display: none;
 }
 
+@media screen and (pointer: coarse) {
+  header h1 {
+    font-size: 16pt;
+  }
+}
+
 @media screen and (orientation: portrait) {
   header h1 #full {
     display: none;
@@ -450,7 +456,9 @@ header #buttonTab #clubSelectionTotal #clubSelectGroup #poker #image {
 
 #popup-field .popup {
   width: 50vw;
-  height: 30vw;
+  height: -webkit-min-content;
+  height: -moz-min-content;
+  height: min-content;
   border-radius: 10pt;
   background: #1452ad;
   padding: 5pt;
@@ -466,7 +474,7 @@ header #buttonTab #clubSelectionTotal #clubSelectGroup #poker #image {
 @media screen and (orientation: portrait) {
   #popup-field .popup {
     width: 90vw;
-    height: 150vw;
+    height: auto;
   }
 }
 
@@ -474,6 +482,9 @@ header #buttonTab #clubSelectionTotal #clubSelectGroup #poker #image {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  height: -webkit-max-content;
+  height: -moz-max-content;
+  height: max-content;
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
@@ -524,25 +535,47 @@ header #buttonTab #clubSelectionTotal #clubSelectGroup #poker #image {
   -webkit-box-flex: 1;
       -ms-flex: auto;
           flex: auto;
+  -webkit-transition: 1s;
+  transition: 1s;
 }
 
-#popup-field .popup #buttons {
+#popup-field .popup .fields .field input.incorrect {
+  background: #ca3030;
+}
+
+#popup-field .popup .buttons {
   width: 100%;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
   -webkit-box-orient: vertical;
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  margin-top: auto;
+  margin-top: 20pt;
+}
+
+#popup-field .popup .buttons button {
+  margin: 4pt;
+  background: #0378d8;
+  width: 100%;
+  border-radius: 6pt;
+  font-size: 10pt;
+}
+
+#popup-field .popup .buttons button:hover {
+  background: #068fff;
 }
 
 #popup-field .popup button {
-  margin: 5pt;
+  margin: 4pt;
   background: #0378d8;
-  margin-top: auto;
+  width: 100%;
   border-radius: 6pt;
+  font-size: 10pt;
 }
 
 #popup-field .popup button:hover {
@@ -611,6 +644,22 @@ header #buttonTab #clubSelectionTotal #clubSelectGroup #poker #image {
           animation: anim-outer 1s ease;
   -webkit-animation-play-state: running;
           animation-play-state: running;
+}
+
+#popup-field #loading .textes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+#popup-field #loading .textes img {
+  width: 15vw;
 }
 
 ::-webkit-scrollbar {
@@ -685,7 +734,7 @@ body .block.top {
   text-align: center;
 }
 
-@media screen and (orientation: portrait) {
+@media screen and (orientation: portrait), screen and (pointer: coarse) {
   body .block.top {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(29, 119, 204, 0.9)), to(rgba(29, 119, 204, 0.9))), url("https://lh3.googleusercontent.com/uH4jH0urKusM1PLh3tFISH2pc4OEatHmehzpX1_k-gn-BQtx4FPixE0--NnPzkJ_-LDqaEwB3YUzh0GMOC0_EiB7vXygOqcMF3vxNIVS-gep33M3aV2FUmW38zu50BfMDd6JMZMTcpiwW1wwIA3CkPob1MFZ5P3PDpmNz0lsPldVcDUto2a0RpUDQPaNu8bBx-H8Iw0PnCHbMjwk_ZdfREdb-l4l_nCjs6q34Xr4beB_jfYC7w8_B0HkAzr5OC6h_WoQHaEKaPnbCVo5Q1QsU_zi-l1LomFLdxdCeLz-PaUY_WudJfcPd6MvxD2g5lZx1zJy2OsDjkLAI-EGJkqKYdzuc8rhjNzUYzHxEKIdYXZKAtDE1_KVgEdsiDNAARRP5kS78Clc9Q5qUwo4tCu0Xg3V8J2aoW3mzz7iWvSCFMo_wsF3u9IpkIVqQvoD4w156_qfMuhnskV4t6QlLN5w-YaXsDNRYQajk9lBZ0MAssOCMGiaP4DPLfKOnmyfuCTlW_g20ep6k8x7bL7GiWNEkvJoe8nvkA2_5T46RWSY9YxawJuc4rg5F0-zQ9UeDAu-A2kweAXXjqRA3S9QoMxJ69OZ4TVqAcQ8k96cIXoep4ngKSftsb27VwD7cwsLBLIU=w1663-h938-no");
     background: linear-gradient(rgba(29, 119, 204, 0.9), rgba(29, 119, 204, 0.9)), url("https://lh3.googleusercontent.com/uH4jH0urKusM1PLh3tFISH2pc4OEatHmehzpX1_k-gn-BQtx4FPixE0--NnPzkJ_-LDqaEwB3YUzh0GMOC0_EiB7vXygOqcMF3vxNIVS-gep33M3aV2FUmW38zu50BfMDd6JMZMTcpiwW1wwIA3CkPob1MFZ5P3PDpmNz0lsPldVcDUto2a0RpUDQPaNu8bBx-H8Iw0PnCHbMjwk_ZdfREdb-l4l_nCjs6q34Xr4beB_jfYC7w8_B0HkAzr5OC6h_WoQHaEKaPnbCVo5Q1QsU_zi-l1LomFLdxdCeLz-PaUY_WudJfcPd6MvxD2g5lZx1zJy2OsDjkLAI-EGJkqKYdzuc8rhjNzUYzHxEKIdYXZKAtDE1_KVgEdsiDNAARRP5kS78Clc9Q5qUwo4tCu0Xg3V8J2aoW3mzz7iWvSCFMo_wsF3u9IpkIVqQvoD4w156_qfMuhnskV4t6QlLN5w-YaXsDNRYQajk9lBZ0MAssOCMGiaP4DPLfKOnmyfuCTlW_g20ep6k8x7bL7GiWNEkvJoe8nvkA2_5T46RWSY9YxawJuc4rg5F0-zQ9UeDAu-A2kweAXXjqRA3S9QoMxJ69OZ4TVqAcQ8k96cIXoep4ngKSftsb27VwD7cwsLBLIU=w1663-h938-no");
@@ -844,6 +893,16 @@ body #become_field #buttons {
 body #become_field #buttons button {
   font-size: 16pt;
   text-transform: capitalize;
+  height: 50pt;
+  -webkit-box-flex: 1;
+      -ms-flex: 1;
+          flex: 1;
+}
+
+body #become_field #buttons button:hover {
+  -webkit-box-flex: 1.5;
+      -ms-flex: 1.5;
+          flex: 1.5;
 }
 
 @media screen and (orientation: portrait) {
@@ -852,30 +911,11 @@ body #become_field #buttons button {
   }
 }
 
-body #become_field #buttons #bBecome {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  height: 50pt;
-}
-
-body #become_field #buttons #bBecome:hover {
-  -webkit-box-flex: 1.5;
-      -ms-flex: 1.5;
-          flex: 1.5;
-}
-
-body #become_field #buttons #bLogin {
-  -webkit-box-flex: 1;
-      -ms-flex: 1;
-          flex: 1;
-  height: 50pt;
-}
-
-body #become_field #buttons #bLogin:hover {
-  -webkit-box-flex: 1.5;
-      -ms-flex: 1.5;
-          flex: 1.5;
+body #become_field #buttons button:disabled {
+  height: 0;
+  font-size: 0;
+  padding: 0;
+  overflow: hidden;
 }
 
 body #become_field .form {

@@ -19,6 +19,12 @@
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
     <script src="/header/js/headerInit.js"></script>
     <script src="/pages/index/js/animations.js"></script>
+    <script src="/pages/index/js/ajax.js"></script>
+    <script src="/pages/index/js/fieldChek.js"></script>
+    <!-- global js -->
+    <script src="/global_js/popup.js"></script>
+    <script src="/global_js/constants.js"></script>
+    <script src="/global_js/jquery.cookie.js"></script>
     <!-- parallaxer -->
     <script src="/global_js/parallax.js"></script>
     <!-- scroller -->
@@ -83,16 +89,9 @@
 
     <div id="become_field">
         <div id="buttons">
-            <button id="bBecome" onmousedown="openRegistration()">registration</button>
-            <button id="bLogin" onmousedown="openLogin()">login</button>
+            <button id="bBecome" onclick="openRegistration()">registration</button>
+            <button id="bLogin" onclick="openLogin()">login</button>
         </div>
-
-        <!-- <div class="form closed" id="registration">
-            <h3>Please enter information about you</h3>
-        </div>
-        <div class="form closed" id="login">
-            <h3>Login to your account</h3>
-        </div> -->
 
     </div>
 
@@ -100,7 +99,7 @@
         <!-- registration -->
         <div id="registration" class="popup closed">
             <div class="header">
-                <button id="bBack" onmousedown="closeRegistration()"><img src="/pics/arrow_left.png"></button>
+                <button id="bBack" onclick="closeRegistration()"><img src="/pics/arrow_left.png"></button>
                 <h3>Registration form</h3>
             </div>
             <div class="fields">
@@ -126,33 +125,36 @@
                     <input type="password" id="password-accept">
                 </div>
             </div>
-            <button id="bRegister">Registrate me!</button>
+            <div class="buttons">
+                <button id="bRegister" onclick="createRequest()">Registrate me!</button>
+            </div>
+            
         </div>
         <!-- login -->
         <div id="login" class="popup closed">
             <div class="header">
-                <button id="bBack" onmousedown="closeLogin();"><img src="/pics/arrow_left.png"></button>
+                <button id="bBack" onclick="closeLogin();"><img src="/pics/arrow_left.png"></button>
                 <h3>Login panel</h3>
             </div>
             <div class="fields">
                 <div class="field">
                     <p>your email:</p>
-                    <input type="email" id="emailLogin">
+                    <input type="email" id="email-login">
                 </div>
                 <div class="field">
                     <p>your password:</p>
-                    <input type="password" id="passwordLogin">
+                    <input type="password" id="password-login">
                 </div>
             </div>
-            <div id="buttons">
-                <button id="bLogin" onmousedown="openForgot()">I forgot my password</button>
-                <button id="bLogin">Login</button>
+            <div class="buttons">
+                <button id="bForgot" onclick="openForgot()">I forgot my password</button>
+                <button id="bLogin-login" onclick="login()">Login</button>
             </div>
         </div>
         <!-- forgot -->
         <div id="forgot" class="popup closed">
             <div class="header">
-                <button id="bBack" onmousedown="closeForgot()"><img src="/pics/arrow_left.png"></button>
+                <button id="bBack" onclick="closeForgot()"><img src="/pics/arrow_left.png"></button>
                 <h3>We'll send you email list</h3>
             </div>
             <div class="fields">
@@ -161,7 +163,7 @@
                     <input type="email" id="emailForgot">
                 </div>
             </div>
-            <div id="buttons">
+            <div class="buttons">
                 <button id="bSend">Send me list with my password</button>
             </div>
         </div>

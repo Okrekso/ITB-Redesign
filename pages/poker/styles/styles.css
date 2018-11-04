@@ -136,6 +136,12 @@ header h1 #mobile {
   display: none;
 }
 
+@media screen and (pointer: coarse) {
+  header h1 {
+    font-size: 16pt;
+  }
+}
+
 @media screen and (orientation: portrait) {
   header h1 #full {
     display: none;
@@ -501,7 +507,7 @@ body .block.top .bg {
           justify-content: center;
 }
 
-@media screen and (orientation: portrait) {
+@media screen and (orientation: portrait), screen and (pointer: coarse) {
   body .block.top .bg {
     background: -webkit-gradient(linear, left top, left bottom, from(rgba(0, 0, 0, 0.9)), to(rgba(0, 0, 0, 0.99))), url("/pics/photos/poker_bg.jpg");
     background: linear-gradient(rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.99)), url("/pics/photos/poker_bg.jpg");
@@ -516,11 +522,10 @@ body .block.top h2 {
   padding-left: 2vw;
   padding-right: 2vw;
   margin-bottom: 5vh;
-  background: rgba(0, 0, 0, 0.75);
   margin-top: auto;
 }
 
-@media screen and (orientation: portrait) {
+@media screen and (orientation: portrait), screen and (pointer: coarse) {
   body .block.top h2 {
     font-size: 20pt;
   }
@@ -530,7 +535,7 @@ body .block.top p {
   width: 50vw;
 }
 
-@media screen and (orientation: portrait) {
+@media screen and (orientation: portrait), screen and (pointer: coarse) {
   body .block.top p {
     width: 80vw;
   }
@@ -576,8 +581,15 @@ body .block.top #circled-parts .circled {
 
 body .block.top #circled-parts .circled .img {
   border-radius: 100%;
-  width: 20vw;
-  height: 20vw;
+  width: 30vh;
+  height: 30vh;
+}
+
+@media screen and (orientation: portrait) {
+  body .block.top #circled-parts .circled .img {
+    width: 20vw;
+    height: 20vw;
+  }
 }
 
 body .block.top #circled-parts .circled h3 {
@@ -586,7 +598,7 @@ body .block.top #circled-parts .circled h3 {
   transition: 1s ease;
 }
 
-@media screen and (orientation: portrait) {
+@media screen and (orientation: portrait), screen and (pointer: coarse) {
   body .block.top #circled-parts .circled h3 {
     font-size: 2.8vw;
   }
@@ -612,6 +624,12 @@ body .block.top #circled-parts .circled p {
   }
 }
 
+@media screen and (pointer: coarse) {
+  body .block.top #circled-parts .circled p {
+    font-size: 1vw;
+  }
+}
+
 body .block.top #circled-parts .circled:hover > p {
   opacity: 1;
 }
@@ -626,7 +644,7 @@ body .block.top #circled-parts .circled:hover > h3 {
   font-size: 30pt;
 }
 
-@media screen and (orientation: portrait) {
+@media screen and (orientation: portrait), screen and (pointer: coarse) {
   body .block.top #circled-parts .circled:hover > h3 {
     font-size: 3vw;
   }

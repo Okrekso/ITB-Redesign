@@ -1,0 +1,14 @@
+{
+  "name": "itbreact",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Semyon Oskerko <semenoskerko@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "create-react-app": "^2.1.1"
+  }
+}
