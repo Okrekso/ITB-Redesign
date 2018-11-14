@@ -3,6 +3,7 @@
 		position: fixed;
 		width: 100vw;
 		height: 100vh;
+		z-index: 500000;
 
 		display: flex;
 		justify-content: center;
@@ -45,6 +46,7 @@
 			border-radius: 10pt;
 			background: $clrAdditional;
 			padding: 5pt;
+			z-index: 50000;
 
 			display: flex;
 			flex-direction: column;
@@ -94,6 +96,19 @@
 					// background: red;
 				}
 				input {
+					min-height: 20pt;
+					margin-left: 5pt;
+					padding-left: 5pt;
+					padding-right: 5pt;
+					flex: auto;
+					transition: 1s;
+					&.incorrect {
+						background: rgb(202, 48, 48);
+					}
+				}
+				textarea {
+					min-height: 20pt;
+					max-height: 200pt;
 					margin-left: 5pt;
 					padding-left: 5pt;
 					padding-right: 5pt;
@@ -121,8 +136,33 @@
 					border-radius: 6pt;
 					font-size: 10pt;
 				}
+				&:disabled{
+					background:$clrAdditional3;
+					cursor: default;
+					&:hover{
+						background: $clrAdditional3;
+					}
+				}
 				&:hover {
 					background: $clrAccent;
+				}
+			}
+			.block{
+				display:flex;
+				width:100%;
+				height:min-content;
+			}
+		}
+		.textes {
+			.text {
+				&{
+					transition: 1s;
+				}
+				&.error {
+					margin-top: 5pt;
+					padding:2pt 5pt;
+					border-radius: 10pt;
+					background: rgba(255, 0, 0, 0.5);
 				}
 			}
 		}
@@ -136,6 +176,9 @@
 				&:hover {
 					background: $clrAccent;
 				}
+			}
+			&:disabled{
+				background: rgb(40, 61, 102);
 			}
 		}
 		// fields

@@ -1,0 +1,500 @@
+@import "../../../global_styles/global";
+@import "../../../global_styles/header";
+@import "../../../global_styles/popups";
+::-webkit-scrollbar {
+    display: none;
+}
+
+body {
+    $blockSeparation: 30pt;
+    & {
+        width: 100vw;
+        align-items: center;
+        background: $clrAdditional2;
+        flex-direction: column;
+        overflow-x: hidden;
+        overflow-y: scroll;
+    }
+    #content {
+        & {
+            background: $clrAdditional3;
+            width: 80vw;
+            flex-direction: column;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: min-content;
+            min-height: 100vh - $headerHeight;
+            @media screen and (orientation: portrait) {
+                width: 100vw;
+            }
+        }
+        #info-top {
+            $imgUrl: "https://libreshot.com/wp-content/uploads/2015/05/coffee-and-laptop.jpg";
+            $imgUrlPremium: "https://www.visitexeter.com/imageresizer/?image=%2Fdbimgs%2FFireworks.jpg&action=Background_Overlay";
+            $imgUrlSeller: "https://biz.nv.ua/img/article/22525/49_main.jpg";
+            & {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                background: linear-gradient(rgba(10, 60, 107, 0.9), rgba(10, 75, 136, 0.9)), url($imgUrl);
+                background-size: cover;
+                background-position: bottom right;
+                background-repeat: no-repeat;
+                background-attachment: fixed;
+                transition: 1s ease;
+                width: 100%;
+                height: auto;
+                &:hover {
+                    padding: 10pt 0;
+                }
+            }
+            &.hidden {
+                display: none;
+            }
+            &.Premium {
+                background: linear-gradient(rgba(112, 207, 3, 0.9), rgba(207, 170, 3, 0.9)), url($imgUrlPremium);
+            }
+            &.Seller {
+                background: linear-gradient(rgba(52, 158, 10, 0.9), rgba(56, 156, 73, 0.9)), url($imgUrlSeller);
+                background-position: center bottom;
+            }
+            @keyframes transparation {
+                0% {
+                    opacity: 0;
+                }
+                100% {
+                    margin-bottom: 0;
+                    opacity: 1;
+                }
+            }
+            &.hidden#userName {
+                animation: none;
+            }
+            &.hidden#accType {
+                animation: none;
+            }
+            #userName {
+                animation: transparation 1s ease-out;
+            }
+            #accType {
+                & {
+                    color: rgba(82, 82, 82, 0.8);
+                    background: rgba(197, 197, 197, 0.5);
+                    margin: 0pt 2pt;
+                    border-radius: 30pt;
+                    cursor: pointer;
+                    padding: 0pt 5pt;
+                    transition: 1s;
+                }
+                &:hover {
+                    background: rgba(218, 218, 218, 0.5);
+                }
+            }
+            #beanType {
+                & {
+                    margin: 5pt 0;
+                    font-size: 10pt;
+                    background: rgba(197, 197, 197, 0.5);
+                    border-radius: 20pt;
+                    padding: 0 5pt;
+                }
+            }
+            #accTypeInfo {
+                & {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    transition: 1s ease;
+                    text-align: center;
+                    width: 90%;
+                    margin: 5pt 0pt;
+                }
+            }
+        }
+        #xp {
+            & {
+                position: relative;
+                width: 100%;
+                flex: 1;
+                display: flex;
+                flex-direction: column;
+            }
+            .topRow {
+                & {
+                    position: absolute;
+                    z-index: 1000;
+                    width: 100%;
+                }
+                .xpRow {
+                    & {
+                        height: 5pt;
+                        z-index: 1;
+                        background: rgba(255, 255, 255, 0.75);
+                    }
+                    .xpCount {
+                        height: 100%;
+                        width: 0%;
+                        background: white;
+                        transition: 2s ease-in-out;
+                    }
+                }
+                .xpTextes {
+                    & {
+                        display: flex;
+                        flex-direction: row;
+                        justify-content: center;
+                        flex-wrap: nowrap;
+                        max-width: 100%;
+                        position: relative;
+                    }
+                    p {
+                        z-index: 5;
+                        margin: 0 5pt;
+                        text-align: center;
+                        @media screen and (orientation: portrait) {
+                            display: none;
+                        }
+                    }
+                }
+            }
+            #xpCompilation {
+                & {
+                    position: relative;
+                    display: flex;
+                    flex: 1 0;
+                    flex-direction: column;
+                }
+                #cardPromotion {
+                    & {
+                        display: flex;
+                        flex-direction: column;
+                        justify-content: flex-end;
+                        align-items: center;
+                        cursor: pointer;
+                        width: 100%;
+                        z-index: 0;
+                        height: 40vh;
+                        background: linear-gradient(rgba(5, 70, 209, 0.7), rgba(7, 156, 255, 0.7)), url('/pics/cardPreview.jpg');
+                        background-size: 100%;
+                        transition: 1s;
+                        background-position: center center;
+                        @media screen and (orientation: portrait) {}
+                    }
+                    &.hidden {
+                        display: none;
+                    }
+                    &:hover {
+                        background-size: 130%;
+                        p {
+                            opacity: 1;
+                        }
+                    }
+                    p {
+                        font-size: 10pt;
+                        opacity: 0;
+                        background: rgba(255, 255, 255, 0.5);
+                        padding: 2pt 10pt;
+                        border-radius: 20pt;
+                        transition: 1s;
+                    }
+                }
+                .buttons {
+                    & {
+                        display: flex;
+                        flex-direction: column; // flex:1;
+                        height: 100%; // background: red;
+                        width: 100%;
+                    }
+                    @media screen and (orientation:portrait) {
+                        // height:100%;
+                    }
+                    .block {
+                        & {
+                            // margin-top: 40vh;
+                            width: 100%;
+                            height: auto;
+                            display: flex;
+                            justify-content: center;
+                        }
+                        @media screen and (orientation:portrait) {
+                            #events {
+                                p {
+                                    margin-left: 50pt;
+                                }
+                                &.single {
+                                    p {
+                                        margin-left: 0;
+                                    }
+                                }
+                            }
+                            #acceptation {
+                                p {
+                                    margin-right: 50pt;
+                                }
+                                &.single {
+                                    p {
+                                        margin-right: 0;
+                                    }
+                                }
+                            }
+                        }
+                        button {
+                            & {
+                                height: 40pt;
+                                flex: 1;
+                                font-size: 12pt;
+                                justify-content: center;
+                                align-items: center;
+                                transition: 1s;
+                            }
+                            p {
+                                font-size: 10pt;
+                            }
+                            @media screen and (orientation:portrait) {
+                                height: 8vh;
+                            }
+                        }
+                        .single {
+                            flex: 1;
+                            border-radius: 10pt;
+                            margin: 5pt 10pt 0pt 10pt;
+                            @media screen and (orientation: portrait) {
+                                p {
+                                    margin: 0;
+                                    padding: 0;
+                                }
+                            }
+                        }
+                        .hidden {
+                            display: none;
+                        }
+                        #acceptation {
+                            & {
+                                background: linear-gradient(rgba(5, 209, 90, 0.9), rgba(3, 104, 25, 0.9)), url("http://prof-pol.ru/images/2018/04/17/dogovor.jpg");
+                                background-size: 100%;
+                                background-position: 70% 70%;
+                            }
+                            &:hover {
+                                background: linear-gradient(rgba(2, 255, 107, 0.9), rgba(1, 201, 45, 0.9)), url("http://prof-pol.ru/images/2018/04/17/dogovor.jpg");
+                                background-size: 120%;
+                                background-position: 10% 70%;
+                            }
+                            &.new-items {
+                                @keyframes newItemsAnim {
+                                    0% {
+                                        background: linear-gradient(rgba(5, 209, 90, 0.9), rgba(3, 104, 25, 0.9)), url("http://prof-pol.ru/images/2018/04/17/dogovor.jpg");
+                                        background-size: 120%;
+                                        background-position: 10% 70%;
+                                    }
+                                    100% {
+                                        background: linear-gradient(rgba(209, 206, 5, 0.9), rgba(97, 104, 3, 0.9)), url("http://prof-pol.ru/images/2018/04/17/dogovor.jpg");
+                                        background-size: 120%;
+                                        background-position: 10% 70%;
+                                    }
+                                }
+                                & {
+                                    animation: newItemsAnim 1s alternate ease-in-out infinite;
+                                }
+                            }
+                        }
+                        #events {
+                            & {
+                                background: linear-gradient(rgba(5, 209, 22, 0.9), rgba(89, 104, 3, 0.9)), url("/pics/speaker.jpg");
+                                background-size: 100%;
+                                background-position: 10% 10%;
+                            }
+                            &:hover {
+                                background: linear-gradient(rgba(1, 247, 22, 0.9), rgba(169, 199, 2, 0.9)), url("/pics/speaker.jpg");
+                                background-size: 120%;
+                                background-position: 10% 20%;
+                            }
+                        }
+                    }
+                }
+                .statistic {
+                    & {
+                        margin-top: 5pt;
+                        margin-left: 5pt;
+                        margin-right: 5pt;
+                        z-index: 100;
+                    }
+                    .stat {
+                        & {
+                            display: flex;
+                            flex-direction: column;
+                            align-items: center;
+                            background: linear-gradient(to bottom, $clrAdditional2, $clrAdditional);
+                            margin: 5pt;
+                            flex: 1;
+                            border-radius: 10pt;
+                            transition: 1s;
+                        }
+                        h2 {
+                            font-size: 10vh;
+                        }
+                        h3 {
+                            margin-top: 0;
+                        }
+                    }
+                    .statComp {
+                        display: flex;
+                    }
+                }
+                #drop {
+                    & {
+                        border-radius: 100%;
+                        background: rgb(194, 9, 9);
+                        width: 50pt;
+                        height: 50pt;
+                        display: flex;
+                        justify-content: center;
+                        align-items: center;
+                        margin-top: 5pt;
+                        margin-bottom: 5pt;
+                        z-index: 100;
+                        align-self: center;
+                    }
+                    img {
+                        width: 90%;
+                    }
+                    &:hover {
+                        @keyframes rippleAnim {
+                            0% {
+                                background: rgb(194, 9, 9);
+                                border-width: 0;
+                                border: solid rgb(255, 0, 0) 0;
+                            }
+                            100% {
+                                background: rgb(238, 13, 13);
+                                border: solid rgba(255, 0, 0, 0) 5pt;
+                            }
+                        }
+                        & {
+                            animation: rippleAnim 1s alternate infinite;
+                        }
+                    }
+                }
+            }
+            #xpText {
+                z-index: 5;
+                font-size: 30pt;
+                margin: 0.5px auto; // background: linear-gradient(to bottom, $clrAdditional2, $clrAdditional);
+                color: $clrAdditional2;
+                background: linear-gradient(to bottom, white, rgb(233, 233, 233));
+                padding: 0 5pt;
+                border-bottom-left-radius: 20pt;
+                border-bottom-right-radius: 20pt;
+                transition: 1s ease;
+                cursor: pointer;
+                &:hover {
+                    padding-top: 5pt;
+                }
+            }
+            .shadowed {
+                & {
+                    display: flex;
+                    flex-direction: column;
+                    justify-content: flex-start;
+                    margin-bottom: 5pt;
+                    width: min-content;
+                    align-self: center;
+                }
+                &.hidden {
+                    display: none;
+                }
+                .shadow {
+                    width: 100%;
+                    height: 10pt;
+                    background: rgba(0, 0, 0, 0.5);
+                    border-radius: 100%; // margin-bottom: 5pt;
+                }
+            }
+            #bRelog {
+                & {
+                    margin-top: 15pt;
+                    background: linear-gradient(to top, red, rgb(172, 8, 8));
+                }
+                &.hidden {
+                    display: none;
+                }
+                &:hover {
+                    background: linear-gradient(to top, rgb(255, 73, 73), rgb(194, 29, 29));
+                }
+            }
+        }
+    }
+    #popup-field {
+        #buyCard {
+            & {
+                background: linear-gradient(rgba(0, 102, 255, 0.8), rgba(0, 102, 255, 0.8)), url('/pics/cardPreview.jpg');
+                background-size: cover;
+            }
+            .textes {
+                & {
+                    display: flex;
+                    flex-direction: column;
+                    text-align: center;
+                }
+                .text {
+                    &.feature {
+                        align-self: center;
+                        margin: 5pt 0;
+                        padding: 0 10pt;
+                        border-radius: 20pt;
+                        font-weight: bold;
+                        background: rgba(3, 255, 45, 0.5);
+                        width: max-content;
+                        color: green;
+                    }
+                }
+                img {
+                    margin-top: 10pt;
+                    width: 50%;
+                    border-radius: 10pt;
+                    box-shadow: 0 1pt 5pt rgba(0, 0, 0, 0.4);
+                }
+            } // .buttons{
+            //     #bBuyCard{
+            //         background: rgb(51, 15, 109);
+            //         &:hover{
+            //             background: rgba(105, 50, 192, 0.795);
+            //         }
+            //     }
+            // }
+        }
+        #eventCreator {
+            #ev-content {
+                height: 200pt;
+                text-align: left;
+            }
+        }
+        #userAcceptation {
+            .textes {
+                justify-content: center;
+                text-align: center;
+                p {
+                    color: rgb(204, 204, 204);
+                }
+                #tName {
+                    color: white;
+                    font-size: 25pt;
+                }
+            }
+            .buttons {
+                #bAccept {
+                    background: linear-gradient(to top, rgb(17, 78, 17), rgb(25, 131, 25));
+                    &:hover {
+                        background: linear-gradient(to top, rgb(29, 224, 29), rgb(0, 189, 0));
+                    }
+                }
+                #bDecline {
+                    background: linear-gradient(to top, rgb(134, 35, 17), rgb(212, 3, 3));
+                    &:hover {
+                        background: linear-gradient(to top, rgb(197, 46, 19), rgb(255, 0, 0));
+                    }
+                }
+            }
+        }
+    }
+}

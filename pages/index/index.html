@@ -13,27 +13,19 @@
     <link href="https://fonts.googleapis.com/css?family=Niramit" rel="stylesheet">
     <!-- icon -->
     <link rel="icon" href="/pics/icon.ico" type="image/x-icon" />
-    <!-- js -->
-    <script src="/global_js/main.js"></script>
-    <script src="http://www.w3schools.com/lib/w3data.js"></script>
+    
+    <script src="/web-app/output/global_bundle.js"></script>
+    <script src="/web-app/output/index_bundle.js"></script>
     <script src="https://ajax.aspnetcdn.com/ajax/jQuery/jquery-3.3.1.min.js"></script>
-    <script src="/header/js/headerInit.js"></script>
-    <script src="/pages/index/js/animations.js"></script>
-    <script src="/pages/index/js/ajax.js"></script>
-    <script src="/pages/index/js/fieldChek.js"></script>
-    <!-- global js -->
-    <script src="/global_js/popup.js"></script>
-    <script src="/global_js/constants.js"></script>
-    <script src="/global_js/jquery.cookie.js"></script>
-    <!-- parallaxer -->
     <script src="/global_js/parallax.js"></script>
-    <!-- scroller -->
-    <script src="//cdn.jsdelivr.net/npm/jquery.scrollto@2.1.2/jquery.scrollTo.min.js"></script>
 </head>
 
-<body onload="Load()">
 
-    <header w3-include-html="/header/header.html"></header>
+<body>
+
+    <header>
+        
+    </header>
 
     <div class="block top" class="parallax-window" data-android-fix="false" data-ios-fix="false" data-bleed="-1"
         data-parallax="scroll" data-speed="0.4" data-image-src="https://lh3.googleusercontent.com/uH4jH0urKusM1PLh3tFISH2pc4OEatHmehzpX1_k-gn-BQtx4FPixE0--NnPzkJ_-LDqaEwB3YUzh0GMOC0_EiB7vXygOqcMF3vxNIVS-gep33M3aV2FUmW38zu50BfMDd6JMZMTcpiwW1wwIA3CkPob1MFZ5P3PDpmNz0lsPldVcDUto2a0RpUDQPaNu8bBx-H8Iw0PnCHbMjwk_ZdfREdb-l4l_nCjs6q34Xr4beB_jfYC7w8_B0HkAzr5OC6h_WoQHaEKaPnbCVo5Q1QsU_zi-l1LomFLdxdCeLz-PaUY_WudJfcPd6MvxD2g5lZx1zJy2OsDjkLAI-EGJkqKYdzuc8rhjNzUYzHxEKIdYXZKAtDE1_KVgEdsiDNAARRP5kS78Clc9Q5qUwo4tCu0Xg3V8J2aoW3mzz7iWvSCFMo_wsF3u9IpkIVqQvoD4w156_qfMuhnskV4t6QlLN5w-YaXsDNRYQajk9lBZ0MAssOCMGiaP4DPLfKOnmyfuCTlW_g20ep6k8x7bL7GiWNEkvJoe8nvkA2_5T46RWSY9YxawJuc4rg5F0-zQ9UeDAu-A2kweAXXjqRA3S9QoMxJ69OZ4TVqAcQ8k96cIXoep4ngKSftsb27VwD7cwsLBLIU=w1663-h938-no">
@@ -43,11 +35,7 @@
         <div class="img"></div>
         <div class="content">
             <h2>What do we do?</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi omnis fugiat sint! Consequuntur
-                doloremque,
-                dicta quae reprehenderit, laudantium unde voluptas, aspernatur sequi nemo quasi maiores perferendis
-                harum
-                vel non inventore.</p>
+            <p>We are an association of many clubs with different branches. We are holding a lot of events and invite you to visit us!</p>
         </div>
     </div>
 
@@ -55,11 +43,7 @@
         <div class="img"></div>
         <div class="content">
             <h2>What do we use?</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi omnis fugiat sint! Consequuntur
-                doloremque,
-                dicta quae reprehenderit, laudantium unde voluptas, aspernatur sequi nemo quasi maiores perferendis
-                harum
-                vel non inventore.</p>
+            <p>We are trying to make events cool and easy to understand. Our speakers are ready to use your attention with usefulness. Also, we have our club cards which give you some privileges.</p>
         </div>
     </div>
 
@@ -67,11 +51,7 @@
         <div class="img"></div>
         <div class="content">
             <h2>How to monitor our events?</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi omnis fugiat sint! Consequuntur
-                doloremque,
-                dicta quae reprehenderit, laudantium unde voluptas, aspernatur sequi nemo quasi maiores perferendis
-                harum
-                vel non inventore.</p>
+            <p>You can visit the <a href="http://itbeans.online/events/">site EVENT catalog</a> at the top or subscribe our telegram boy, bean geek by <a href="http://t.me/bean_geek_bot">this url</a></p>
         </div>
     </div>
 
@@ -79,94 +59,19 @@
         <div class="img"></div>
         <div class="content">
             <h2>How to enter?</h2>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Sequi omnis fugiat sint! Consequuntur
-                doloremque,
-                dicta quae reprehenderit, laudantium unde voluptas, aspernatur sequi nemo quasi maiores perferendis
-                harum
-                vel non inventore.</p>
+            <p>Just enter your information in form in the bottom and wait for email list!</p>
         </div>
     </div>
 
     <div id="become_field">
         <div id="buttons">
-            <button id="bBecome" onclick="openRegistration()">registration</button>
-            <button id="bLogin" onclick="openLogin()">login</button>
+            <button id="bBecome" onclick="popup.openPopup('#registration')" disabled>registration</button>
+            <button id="bLogin" onclick="popup.openPopup('#login')" disabled>login</button>
         </div>
 
     </div>
 
     <div id="popup-field" class="closed">
-        <!-- registration -->
-        <div id="registration" class="popup closed">
-            <div class="header">
-                <button id="bBack" onclick="closeRegistration()"><img src="/pics/arrow_left.png"></button>
-                <h3>Registration form</h3>
-            </div>
-            <div class="fields">
-                <div class="field">
-                    <p>your name:</p>
-                    <input type="text" id="name">
-                </div>
-                <div class="field">
-                    <p>your student group:</p>
-                    <input type="text" id="group">
-                </div>
-                <div class="separator"></div>
-                <div class="field">
-                    <p>your email:</p>
-                    <input type="email" id="email">
-                </div>
-                <div class="field">
-                    <p>your password:</p>
-                    <input type="password" id="password">
-                </div>
-                <div class="field">
-                    <p>accept your password:</p>
-                    <input type="password" id="password-accept">
-                </div>
-            </div>
-            <div class="buttons">
-                <button id="bRegister" onclick="createRequest()">Registrate me!</button>
-            </div>
-            
-        </div>
-        <!-- login -->
-        <div id="login" class="popup closed">
-            <div class="header">
-                <button id="bBack" onclick="closeLogin();"><img src="/pics/arrow_left.png"></button>
-                <h3>Login panel</h3>
-            </div>
-            <div class="fields">
-                <div class="field">
-                    <p>your email:</p>
-                    <input type="email" id="email-login">
-                </div>
-                <div class="field">
-                    <p>your password:</p>
-                    <input type="password" id="password-login">
-                </div>
-            </div>
-            <div class="buttons">
-                <button id="bForgot" onclick="openForgot()">I forgot my password</button>
-                <button id="bLogin-login" onclick="login()">Login</button>
-            </div>
-        </div>
-        <!-- forgot -->
-        <div id="forgot" class="popup closed">
-            <div class="header">
-                <button id="bBack" onclick="closeForgot()"><img src="/pics/arrow_left.png"></button>
-                <h3>We'll send you email list</h3>
-            </div>
-            <div class="fields">
-                <div class="field">
-                    <p>your email:</p>
-                    <input type="email" id="emailForgot">
-                </div>
-            </div>
-            <div class="buttons">
-                <button id="bSend">Send me list with my password</button>
-            </div>
-        </div>
     </div>
 </body>
 

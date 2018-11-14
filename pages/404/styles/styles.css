@@ -58,6 +58,15 @@ body header h1 {
   cursor: pointer;
 }
 
+body #content {
+  width: 100vw;
+  height: 95vh;
+  margin-top: 5vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
 ::-webkit-scrollbar {
   width: 5pt;
 }
@@ -99,6 +108,13 @@ button:hover {
 }
 
 input {
+  background: #124085;
+  color: white;
+  font-family: "Niramit", sans-serif;
+  border: none;
+}
+
+textarea {
   background: #124085;
   color: white;
   font-family: "Niramit", sans-serif;
